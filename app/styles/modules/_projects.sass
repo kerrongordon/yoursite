@@ -1,0 +1,65 @@
+#projects
+	position: relative
+	transition: all .75s ease-in-out
+
+.projects
+	display: flex
+	max-width: 1200px
+	margin: 5em auto
+	justify-content: space-around
+	flex-wrap: wrap
+	text-align: center
+
+.proj
+	width: 250px
+	margin: 20px
+	position: relative
+	overflow: hidden
+	background-color: #1abc9c
+	transition: all 0.2s ease-in-out
+
+	img
+		width: 250px
+	
+	h4
+		
+
+	&:hover 
+		cursor: pointer
+		color: white
+		box-shadow: 0 15px 15px -7px rgba(0, 0, 0, 0.5)
+
+
+.page-load
+	width: 100%
+	min-height: 500px
+	position: absolute
+	top: 0
+	display: none
+	background-color: white
+
+
+.subproj
+	display: flex
+	max-width: 1200px
+	margin: 5em auto
+	//justify-content: space-around
+	flex-wrap: wrap
+	text-align: center
+
+.close
+	height: 40px
+	width: 40px
+	cursor: pointer
+	opacity: 0.5
+	position: absolute
+	top: 75px
+	left: 175px
+	display: none
+
+	svg 
+		height: 40px
+		width: 40px
+
+	&:hover 
+		opacity: 1

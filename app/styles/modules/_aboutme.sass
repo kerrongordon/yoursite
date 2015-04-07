@@ -1,0 +1,52 @@
+.face
+	background: 
+		image: url(../images/face.jpg)
+		size: cover
+		repeat: no-repeat
+
+	height: 300px
+	width: 300px
+	margin: -150px auto 0
+	border: solid 10px #fff
+	border-radius: 50%
+	position: relative
+	z-index: 10
+
+.description
+	max-width: 750px
+	margin: 0 auto
+	padding: 1em
+	text-align: center
+	font-size: 17px
+
+.skill-block
+	max-width: 960px
+	margin: 2em auto 5em 
+	display: flex 
+	flex-wrap: wrap
+
+.skill-box
+	width: 450px
+	padding: 0 1em
+	text-align: left
+	font-family: "Cinzel Decorative",cursive
+
+.skill 
+	background: #ccc
+	height: .35em
+	width: 100%
+	margin: 15px 0
+
+.skill-bar 
+	height: 100%
+	display: block
+	background: #1abc9c
+	transition: all 1s ease-in-out
+
+
+$bar-list: 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
+
+@each $current-bar in $bar-list
+	$i: index($bar-list, $current-bar)
+	.skill-level-#{$i * 5}
+		width: $current-bar

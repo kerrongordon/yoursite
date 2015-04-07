@@ -1,0 +1,41 @@
+doctype html
+html.no-js
+  head
+    meta(charset="utf-8")
+    title yoursite
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width")
+    link(rel="shortcut icon", href="/favicon.ico")
+    link(href="http://fonts.googleapis.com/css?family=Cinzel+Decorative", rel="stylesheet", type="text/css")
+    link(href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400", rel="stylesheet", type="text/css")
+    // build:css styles/vendor.min.css
+    // endbuild
+    // build:css({.tmp,app}) styles/main.min.css
+    // bower:css
+    // endbower
+    link(rel="stylesheet", href="styles/main.css")
+    // endbuild
+    
+
+  body
+
+    include ../modules/_header
+
+    include ../modules/_aboutme
+
+    include ../modules/_featured
+
+    include ../modules/_projects
+
+    include ../modules/_footer
+
+    // build:js(./app/) scripts/vendor.min.js
+    // bower:js
+    script(src='../bower_components/jquery/dist/jquery.js')
+    // endbower
+    // endbuild
+    // build:js scripts/plugins.min.js
+    // endbuild
+    // build:js({app,.tmp}) scripts/main.min.js
+    script(src="scripts/main.js")
+    // endbuild

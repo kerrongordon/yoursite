@@ -41,7 +41,30 @@
 	height: 100%
 	display: block
 	background: #1abc9c
-	transition: all 1s ease-in-out
+	position: relative
+	transition: all 1.5s ease-in-out
+
+	.waterdrop 
+		position: absolute
+		right: -15px
+		top: -35px
+		width: 30px
+		height: 30px
+		background: #1abc9c
+		border-top-left-radius: 0
+		border-top-right-radius: 75px
+		border-bottom-right-radius: 75px
+		border-bottom-left-radius: 75px
+		transform: rotate(225deg)
+
+		span 
+			transform: rotate(140deg)
+			display: block
+			color: #fff
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.43)
+			font-size: 12px
+			text-align: center
+			padding: 5px
 
 
 $bar-list: 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
@@ -50,3 +73,6 @@ $bar-list: 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90
 	$i: index($bar-list, $current-bar)
 	.skill-level-#{$i * 5}
 		width: $current-bar
+
+.skill-level-0
+	width: 0%

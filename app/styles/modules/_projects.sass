@@ -5,10 +5,12 @@
 .projects
 	display: flex
 	max-width: 1200px
+	height: 0px
 	margin: 5em auto
 	justify-content: space-around
 	flex-wrap: wrap
 	text-align: center
+	transition: all .75s ease-in-out
 
 .proj
 	width: 250px
@@ -16,7 +18,7 @@
 	position: relative
 	overflow: hidden
 	background-color: #1abc9c
-	transition: all 0.2s ease-in-out
+	transition: all .75s ease-in-out
 
 	img
 		width: 250px
@@ -32,10 +34,11 @@
 
 .page-load
 	width: 100%
-	min-height: 500px
 	position: absolute
 	top: 0
+	overflow: hidden
 	display: none
+	transition: all .75s ease-in-out
 	background-color: white
 
 

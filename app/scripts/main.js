@@ -7,12 +7,37 @@ function yoursite() {
 	
 	//header 
 	$(window).scroll(function() {
-		var wScroll = $(this).scrollTop();
+		var wScroll  = $(this).scrollTop(),
+		    skillBar = $('.skill-bar'),
+		    logo     = $('.logo'),
+		    header   = $('header').height()/1.8,
+		    overlay  = $('.overlay');
 
-		$('.logo').css({ 'margin-top' : wScroll });
+		logo.css({ 'margin-top' : wScroll });
 
-		$('.overlay').css('opacity', wScroll /600 );
+		overlay.css('opacity', wScroll /600 );
+
+		if (wScroll <= header) {
+	        skillBar.addClass('skill-level-0');
+	    } else {
+	        skillBar.removeClass('skill-level-0');
+	    }
+
 	});
+
+		var waterdrop = $('.skill-bar'),
+			skill     = $('.skill');
+
+		waterdrop.each(function() {
+			
+			var waterSpan 	= $(this).find('span'),
+			 	skillWidth 	= skill.width(),
+			 	tesyou  	= $(this).width(),
+			 	total 		= Math.floor((tesyou / skillWidth) * 100);
+
+			waterSpan.text(total + '');
+
+		});
 
 		var proj        = $('.proj'),
 			pageLoad 	= $('.page-load'),
@@ -29,8 +54,8 @@ function yoursite() {
 		projects.show().addClass('animated fadeOutLeft')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated fadeOutLeft'); 
-            //$(this).css('display', 'none');
+            $(this).removeClass('animated fadeOutLeft')
+            .css('margin-left', '100%');
             next(); 
         });
 
@@ -52,7 +77,7 @@ function yoursite() {
 
 	close.click(function() {
 
-		projects.show().addClass('animated fadeInLeft')
+		projects.show().css('margin-left', 'auto').addClass('animated fadeInLeft')
           .delay(900)
           .queue( function(next){ 
             $(this).removeClass('animated fadeInLeft'); 
@@ -62,16 +87,16 @@ function yoursite() {
 		pageLoad.show().addClass('animated fadeOutRight')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated fadeOutRight'); 
-            $(this).css('display', 'none');
+            $(this).removeClass('animated fadeOutRight')
+            .css('display', 'none');
             next(); 
         });
 
         close.show().addClass('animated fadeOutLeft')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated fadeOutLeft'); 
-            $(this).css('display', 'none');
+            $(this).removeClass('animated fadeOutLeft') 
+            .css('display', 'none');
             next(); 
         });
 	

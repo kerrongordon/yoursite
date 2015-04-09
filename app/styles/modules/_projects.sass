@@ -1,11 +1,9 @@
 #projects
 	position: relative
-	transition: all .75s ease-in-out
 
 .projects
 	display: flex
 	max-width: 1200px
-	height: 0px
 	margin: 5em auto
 	justify-content: space-around
 	flex-wrap: wrap
@@ -15,38 +13,35 @@
 .proj
 	width: 250px
 	margin: 20px
-	position: relative
-	overflow: hidden
-	background-color: #1abc9c
 	transition: all .75s ease-in-out
 
 	img
 		width: 250px
 	
-	h4
-		
-
-	&:hover 
-		cursor: pointer
-		color: white
-		box-shadow: 0 15px 15px -7px rgba(0, 0, 0, 0.5)
+	svg
+		border-radius: 50%
+		transition: all .5s ease-in-out
+	
+		&:hover 
+			cursor: pointer
+			box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5)
 
 
 .page-load
-	width: 100%
-	position: absolute
-	top: 0
-	overflow: hidden
-	display: none
-	transition: all .75s ease-in-out
-	background-color: white
+	
 
+.popupinfor
+	width: 70%
+	left: 15%
+	top: 0
+	z-index: 200
+	position: absolute
+	transition: all .75s ease-in-out
 
 .subproj
 	display: flex
 	max-width: 1200px
 	margin: 5em auto
-	//justify-content: space-around
 	flex-wrap: wrap
 	text-align: center
 
@@ -56,8 +51,8 @@
 	cursor: pointer
 	opacity: 0.5
 	position: absolute
-	top: 75px
-	left: 175px
+	top: -18px
+	left: -18px
 	display: none
 
 	svg 

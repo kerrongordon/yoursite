@@ -13,14 +13,15 @@ function yoursite() {
 		    header   = $('header').height()/1.8,
 		    overlay  = $('.overlay');
 
-		logo.css({ 'margin-top' : wScroll });
+		//logo.css({ 'margin-top' : wScroll });
+		logo.css('transform', 'translate(0,' + wScroll/2 + 'px )');
 
 		overlay.css('opacity', wScroll /600 );
 
 		if (wScroll <= header) {
-	        skillBar.addClass('skill-level-0');
+	        skillBar.addClass('skill-level-0 fadeInWaterdrop');
 	    } else {
-	        skillBar.removeClass('skill-level-0');
+	        skillBar.removeClass('skill-level-0 fadeInWaterdrop');
 	    }
 
 	});
@@ -32,8 +33,8 @@ function yoursite() {
 			
 			var waterSpan 	= $(this).find('span'),
 			 	skillWidth 	= skill.width(),
-			 	tesyou  	= $(this).width(),
-			 	total 		= Math.floor((tesyou / skillWidth) * 100);
+			 	barWidth  	= $(this).width(),
+			 	total 		= Math.floor((barWidth / skillWidth) * 100);
 
 			waterSpan.text(total + '');
 
@@ -41,6 +42,7 @@ function yoursite() {
 
 		var proj        = $('.proj'),
 			pageLoad 	= $('.page-load'),
+			popupinfor  = $('.popupinfor'),
 			projects    = $('.projects'),
 			close       = $('.close');
 
@@ -51,18 +53,13 @@ function yoursite() {
 
 		console.log(pageId);
 
-		projects.show().addClass('animated fadeOutLeft')
-          .delay(900)
-          .queue( function(next){ 
-            $(this).removeClass('animated fadeOutLeft')
-            .css('margin-left', '100%');
-            next(); 
-        });
+		projects.show().css('opacity', '0');
+          
 
-		pageLoad.show().addClass('animated fadeInRight')
+		popupinfor.show().addClass('animated zoomIn')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated fadeInRight'); 
+            $(this).removeClass('animated zoomIn'); 
             next(); 
         });
 
@@ -77,25 +74,20 @@ function yoursite() {
 
 	close.click(function() {
 
-		projects.show().css('margin-left', 'auto').addClass('animated fadeInLeft')
-          .delay(900)
-          .queue( function(next){ 
-            $(this).removeClass('animated fadeInLeft'); 
-            next(); 
-        });
+		projects.show().css('opacity', '1');
 
-		pageLoad.show().addClass('animated fadeOutRight')
+		popupinfor.show().addClass('animated zoomOut')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated fadeOutRight')
+            $(this).removeClass('animated zoomOut')
             .css('display', 'none');
             next(); 
         });
 
-        close.show().addClass('animated fadeOutLeft')
+        close.show().addClass('animated fadeOut')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated fadeOutLeft') 
+            $(this).removeClass('animated fadeOut') 
             .css('display', 'none');
             next(); 
         });

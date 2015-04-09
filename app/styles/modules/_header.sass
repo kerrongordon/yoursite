@@ -9,6 +9,7 @@ header
         size: cover
         position: center
         attachment: fixed
+        color: $accentcolor
 
     display: flex
     flex-direction: column
@@ -16,12 +17,16 @@ header
     align-items: center
     
 .logo 
-    font-family: 'Cinzel Decorative', cursive
-    font-size: 5rem
     z-index: 5
-    color: #fff
-    font-weight: 300
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5)
+    
+    span
+
+        &:after
+            content: ""
+            display: inline
+            border: solid 1px
+            box-shadow: 0 0 5px
+            animation: cursorBlink 1s infinite ease-in-out
 
 .overlay 
     position: absolute
@@ -30,5 +35,13 @@ header
     left: 0
     right: 0
     bottom: 0
-    background: #34495e
+    background-color: $accentcolor
     opacity: 0
+
+@keyframes cursorBlink
+    0%
+        opacity: 0
+    50%
+        opacity: 1
+    100%
+        opacity: 0

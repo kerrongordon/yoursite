@@ -14,12 +14,6 @@ body {
 	overflow-x: hidden;
 }
 
-svg:not(:root) {
-	overflow: hidden;
-}
-
-
-
 
 
 @import "modules/header";
@@ -29,6 +23,8 @@ svg:not(:root) {
 @import "modules/featured";
 
 @import "modules/projects";
+
+@import "modules/contact";
 
 @import "vendor/animate";
 

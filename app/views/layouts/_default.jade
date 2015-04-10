@@ -27,6 +27,8 @@ html.no-js
 
     include ../modules/_projects
 
+    include ../modules/_contact
+
     include ../modules/_footer
 
     // build:js(./app/) scripts/vendor.min.js
@@ -35,6 +37,7 @@ html.no-js
     // endbower
     // endbuild
     // build:js scripts/plugins.min.js
+    scripts(src='scripts/plugins/animatescroll.min.js')
     // endbuild
     // build:js({app,.tmp}) scripts/main.min.js
     script(src="scripts/main.js")

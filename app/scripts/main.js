@@ -53,13 +53,23 @@ function yoursite() {
 
 		console.log(pageId);
 
-		projects.show().css('opacity', '0');
-          
+		//proj.addClass('hide-proj');
 
-		popupinfor.show().addClass('animated zoomIn')
+		projects.show().addClass('animated fadeOutLeft')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated zoomIn'); 
+            $(this).removeClass('animated fadeOutLeft')
+            .css({
+            	opacity: '0',
+            	transform: 'translate3d(-100%, 0, 0)'
+            });
+            next(); 
+        });          
+
+		popupinfor.show().addClass('animated fadeInRight')
+          .delay(900)
+          .queue( function(next){ 
+            $(this).removeClass('animated fadeInRight');
             next(); 
         });
 
@@ -74,13 +84,25 @@ function yoursite() {
 
 	close.click(function() {
 
-		projects.show().css('opacity', '1');
+		projects.show().css('display', 'flex');
 
-		popupinfor.show().addClass('animated zoomOut')
+		//proj.removeClass('hide-proj');
+
+		projects.show().addClass('animated fadeInLeft')
           .delay(900)
           .queue( function(next){ 
-            $(this).removeClass('animated zoomOut')
-            .css('display', 'none');
+            $(this).removeClass('animated fadeInLeft')
+            .css({
+            	opacity: '1',
+            	transform: 'translate3d(-0%, 0, 0)'
+            }); 
+            next(); 
+        }); 
+
+		popupinfor.show().addClass('animated fadeOutRight')
+          .delay(900)
+          .queue( function(next){ 
+            $(this).removeClass('animated fadeOutRight marup');
             next(); 
         });
 
@@ -93,6 +115,15 @@ function yoursite() {
         });
 	
 	});
+
+	//$('#slide-2').animatescroll({scrollSpeed:3000,easing:'easeOutElastic'});
+
+	$('.s3').click(function(event) {
+		event.preventDefault();
+		$(this).animatescroll();
+	});
+
+
 
 }
 

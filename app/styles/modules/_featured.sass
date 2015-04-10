@@ -1,5 +1,13 @@
 .featured
+	position: relative
 	background: $accentcolor
+	background: 
+		image: url(../images/featured-bg.jpg)
+		repeat: no-repeat
+		size: cover
+		position: center
+		attachment: fixed
+		color: $accentcolor
 
 .feat-box
 	display: flex
@@ -8,13 +16,28 @@
 	justify-content: space-around
 	flex-wrap: wrap
 	text-align: center
+	position: relative
+	z-index: 10
 
 .feat
 	padding: 0 2em
 	margin: 5em 0 2em
 	color: #fff
-	width: 300px
+	width: 250px
+
+	p
+		color: #fff
 
 	img
-		width: 200px
+		width: 250px
 		border: solid 1px
+
+.overlay-sub
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: $accentcolor
+	z-index: 3
+	opacity: 0.7

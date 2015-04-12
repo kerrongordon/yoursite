@@ -2,6 +2,7 @@
 	position: relative
 	//padding: 5em 0
 	background-color: floralwhite
+	overflow-x: hidden
 
 .contain
 	position: relative
@@ -13,7 +14,8 @@
 	display: flex
 	max-width: 1200px
 	margin: 0 auto
-	//position: absolute
+	position: relative
+	top: 0
 	justify-content: space-around
 	flex-wrap: wrap
 	text-align: center
@@ -22,7 +24,7 @@
 .proj
 	width: 250px
 	margin: 20px
-	padding: 2em 0
+	padding: 2em 5px
 	height: auto
 	background-color: $bodycolor
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4)
@@ -42,16 +44,19 @@
 	overflow: hidden
 
 .page-load
+	position: relative
+	top: 0
 	
 
 .popupinfor
-	width: 70%
+	width: 1200px
 	//height: 500px
-	left: 15%
-	top: 0
+	//left: 15%
+	//top: -50%
 	z-index: 200
 	margin: 0 auto 0
-	//position: absolute
+	display: block
+	position: relative
 	background-color: $bodycolor
 	//transform: translate3d(0%, -604px, 0)
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4)
@@ -76,7 +81,7 @@
 	//position: absolute
 	//top: -18px
 	//left: -18px
-	display: none
+	display: block
 
 	svg 
 		height: 40px
@@ -106,3 +111,22 @@
 	z-index: 10
 	left: 40%
 	bottom: 0
+
+///new
+
+.projects-wrap
+	width: 200%
+	//background: blue
+	padding: 3em 0
+	+clearfix
+
+.proj-wrap, .popup-wrap
+	width: 50%
+	float: left
+	position: relative
+	//background: green
+	
+
+.proj-slide
+	left: 0%
+	transition: all .75s ease-in-out

@@ -4,6 +4,7 @@
 
 @import "partials/typography";
 
+@import "partials/base";
 
 
 body {
@@ -11,7 +12,7 @@ body {
 	padding: 0;
 	background: $bodycolor;
     
-	overflow-x: hidden;
+	//overflow-x: hidden;
 }
 
 

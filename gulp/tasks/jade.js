@@ -13,7 +13,7 @@ var handleError = require('./../utils/handleError.js');
 // Compile jade to html
 
 gulp.task('jade', ['jade:prepareData'], function() {
-  return gulp.src('app/views/*.jade')
+  return gulp.src('app/views/**/*.jade')
     .pipe(plumber(handleError))
     .pipe(data(function() {
       return JSON.parse(fs.readFileSync('./app/views/data.json'));

@@ -6,16 +6,7 @@
 
 @import "partials/base";
 
-
-body {
-	margin: 0;
-	padding: 0;
-	background: $bodycolor;
-    
-	//overflow-x: hidden;
-}
-
-
+@import "modules/mainmenu";
 
 @import "modules/header";
 
@@ -27,7 +18,7 @@ body {
 
 @import "modules/contact";
 
-@import "vendor/animate";
+//@import "vendor/animate";
 
 @import "partials/grids";
 

@@ -19,17 +19,22 @@ html.no-js
 
   body
 
-    include ../modules/_header
+    .menubar
+        include ../modules/_mainmenu
 
-    include ../modules/_aboutme
+    .page
 
-    include ../modules/_featured
+        include ../modules/_header
 
-    include ../modules/_projects
+        include ../modules/_aboutme
 
-    include ../modules/_contact
+        include ../modules/_featured
 
-    include ../modules/_footer
+        include ../modules/_projects
+
+        include ../modules/_contact
+
+        include ../modules/_footer
 
     // build:js(./app/) scripts/vendor.min.js
     // bower:js
@@ -37,7 +42,6 @@ html.no-js
     // endbower
     // endbuild
     // build:js scripts/plugins.min.js
-    scripts(src='scripts/plugins/animatescroll.min.js')
     // endbuild
     // build:js({app,.tmp}) scripts/main.min.js
     script(src="scripts/main.js")

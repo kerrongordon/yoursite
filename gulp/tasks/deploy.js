@@ -13,7 +13,7 @@ var handleError = require('./../utils/handleError.js');
 
 // TODO plumber not working with this
 
-gulp.task('deploy', function() {
+gulp.task('deploy', ['build'], function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });

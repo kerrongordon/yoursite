@@ -6,15 +6,15 @@ var wiredep = require('wiredep').stream;
 // Inject bower components
 
 gulp.task('wiredep', function () {
-  
+
   // SCSS
-  gulp.src('app/styles/*.scss')
+  gulp.src('app/styles/**/*.scss')
     .pipe(wiredep({
       ignorePath: '../../',
       overides: {}
     }))
     .pipe(gulp.dest('app/styles'));
-  
+
   // Jade
   gulp.src('app/views/layouts/*.jade')
     .pipe(wiredep({
@@ -23,5 +23,5 @@ gulp.task('wiredep', function () {
       overides: {}
     }))
     .pipe(gulp.dest('app/views/layouts'));
-  
+
 });

@@ -11,7 +11,7 @@ gulp.task('build', function(cb) {
   runSequence(
     ['wiredep','clean'],
     ['styles','jade', 'jshint'],
-    ['images', 'fonts', 'copy', 'extras'],
+    ['images', 'fonts', 'copy', 'copyHTML', 'extras'],
     'useref',
     'buildSize',
     cb

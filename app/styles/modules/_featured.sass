@@ -1,6 +1,7 @@
 .featured
 	position: relative
 	background: $accentcolor
+	overflow-x: hidden
 	background: 
 		image: url(../images/featured-bg.jpg)
 		repeat: no-repeat
@@ -8,28 +9,6 @@
 		position: center
 		color: $accentcolor
 
-.feat-box
-	display: flex
-	max-width: 1200px
-	margin: 0 auto
-	justify-content: space-around
-	flex-wrap: wrap
-	text-align: center
-	position: relative
-	z-index: 10
-
-.feat
-	padding: 0 2em
-	margin: 5em 0 2em
-	color: #fff
-	width: 250px
-
-	p
-		color: #fff
-
-	img
-		width: 250px
-		border: solid 1px
 
 .overlay-sub
 	position: absolute
@@ -39,4 +18,57 @@
 	bottom: 0
 	background: $accentcolor
 	z-index: 3
-	opacity: 0.7
+	opacity: 0.8
+
+
+.carousel-buttons
+	position: relative
+	z-index: 5
+	display: block
+	width: 100%
+	padding: 2em 0
+	text-align: center
+
+.carousel-full
+	width: 400%
+	position: relative
+	z-index: 5
+	+clearfix
+
+.slide
+	position: relative
+	float: left
+	width: 25%
+	display: inline-block
+	left: 0%
+	opacity: 0
+	transition: all .75s ease-in-out
+
+.slide-box
+	max-width: 1200px
+	margin: 5em auto
+	+clearfix
+
+.feat
+	+clearfix
+
+.feat-img 
+	float: left
+	margin: 1em
+	width: 50%
+	height: auto
+
+	img 
+		width: 100%
+
+.feat-content 
+	float: left
+	width: 45%
+	margin: 1em
+	color: #fff
+
+	p 
+		color: #fff
+
+#slide-1
+	opacity: 1

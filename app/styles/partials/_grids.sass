@@ -58,23 +58,20 @@ header
 
 //fed
 
-.feat-box 
+
+.slide-box
 	@include tablet
-		max-width: 800px
+		max-width: 500px
+		margin: 1em auto
 
-	@include mobile
-		display: block
-
-.feat
+.feat-img
 	@include tablet
-		width: 200px
+		float: none
+		width: auto
 
-		img 
-			width: 200px
-
-	@include mobile
-		padding: 2em
-		margin: 0
+.feat-content
+	@include tablet
+		float: none
 		width: auto
 
 //////////////////////////////////////////////

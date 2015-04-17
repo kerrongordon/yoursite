@@ -17,6 +17,7 @@ function yoursite() {
 		kgMenubarLink    = $('.menubar a'),
 		kgProjectsLink   = $('#projects'),
 		kgPage           = $('.page'),
+		kgSlide          = $('.slide'),
 		kgMenubutton     = $('.menubutton');
 
 
@@ -33,9 +34,9 @@ function yoursite() {
 			kgOverlay.css('opacity', wScroll /600 );
 
 			if (wScroll <= header) {
-		        kgSkillBar.addClass('skill-level-0');
+		        kgSkillBar.addClass('skill-level-0 animated fadeIn');
 		    } else {
-		        kgSkillBar.removeClass('skill-level-0');
+		        kgSkillBar.removeClass('skill-level-0 animated fadeIn');
 		    }
 
 		});
@@ -44,7 +45,7 @@ function yoursite() {
 
 
 
-	//Gets the skill level form document
+	//Gets the skill level form class name
 
 	function waterdropCount() {
 
@@ -149,6 +150,60 @@ function yoursite() {
 		});
 
 	}
+
+
+
+	 
+	$('.carousel-buttons button').on('click', function(event) {
+		event.preventDefault();
+		var data = $(this).val();
+
+		var slide1 = $('#slide-1'),
+			slide2 = $('#slide-2'),
+			slide3 = $('#slide-3'),
+			slide4 = $('#slide-4');
+			
+
+		if (data === 'slide-1') {
+			
+			kgSlide.css('left', '0%');
+			slide1.css('opacity', '1');
+
+			slide2.css('opacity', '0');
+			slide3.css('opacity', '0');
+			slide4.css('opacity', '0');
+
+		} else if (data === 'slide-2') {
+			
+			kgSlide.css('left', '-25%');
+			slide2.css('opacity', '1');
+
+			slide1.css('opacity', '0');
+			slide3.css('opacity', '0');
+			slide4.css('opacity', '0');
+
+		} else if (data === 'slide-3') {
+			
+			kgSlide.css('left', '-50%');
+			slide3.css('opacity', '1');
+
+			slide1.css('opacity', '0');
+			slide2.css('opacity', '0');
+			slide4.css('opacity', '0');
+
+		} else if (data === 'slide-4') {
+			
+			kgSlide.css('left', '-75%');
+			slide4.css('opacity', '1');
+
+			slide1.css('opacity', '0');
+			slide2.css('opacity', '0');
+			slide3.css('opacity', '0');
+
+		}
+	});
+
+
     
     
     	//call all functions 

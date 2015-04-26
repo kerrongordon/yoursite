@@ -151,58 +151,73 @@ function yoursite() {
 
 	}
 
+ 	
+ 	function  kgcarousel() {
+	
+		$('.btn:nth-child(1)').addClass('accentcolor2'); //init button backround color 
 
 
-	 
-	$('.carousel-buttons button').on('click', function(event) {
-		event.preventDefault();
-		var data = $(this).val();
+		$('.carousel-buttons button').on('click', function(event) {
+			event.preventDefault();
 
-		var slide1 = $('#slide-1'),
-			slide2 = $('#slide-2'),
-			slide3 = $('#slide-3'),
-			slide4 = $('#slide-4');
-			
+			var btn = $(this).val();
 
-		if (data === 'slide-1') {
-			
-			kgSlide.css('left', '0%');
-			slide1.css('opacity', '1');
+			var slide1 = $('#slide-1'),
+				slide2 = $('#slide-2'),
+				slide3 = $('#slide-3'),
+				slide4 = $('#slide-4');
 
-			slide2.css('opacity', '0');
-			slide3.css('opacity', '0');
-			slide4.css('opacity', '0');
+			var btn1 = $('.btn:nth-child(1)'),
+				btn2 = $('.btn:nth-child(2)'),
+				btn3 = $('.btn:nth-child(3)'),
+				btn4 = $('.btn:nth-child(4)');
 
-		} else if (data === 'slide-2') {
-			
-			kgSlide.css('left', '-25%');
-			slide2.css('opacity', '1');
+			//slide one 
 
-			slide1.css('opacity', '0');
-			slide3.css('opacity', '0');
-			slide4.css('opacity', '0');
+			if (btn === 'slide-1') {
+				btn1.addClass('accentcolor2');
+				kgSlide.css('left', '0%');
+				slide1.css('opacity', '1');
+			} else {
+				btn1.removeClass('accentcolor2');
+				slide1.css('opacity', '0');
+			}
 
-		} else if (data === 'slide-3') {
-			
-			kgSlide.css('left', '-50%');
-			slide3.css('opacity', '1');
+			//slide two
 
-			slide1.css('opacity', '0');
-			slide2.css('opacity', '0');
-			slide4.css('opacity', '0');
+			if (btn === 'slide-2') {
+				btn2.addClass('accentcolor2');
+				kgSlide.css('left', '-25%');
+				slide2.css('opacity', '1');
+			} else {
+				btn2.removeClass('accentcolor2');
+				slide2.css('opacity', '0');
+			}
 
-		} else if (data === 'slide-4') {
-			
-			kgSlide.css('left', '-75%');
-			slide4.css('opacity', '1');
+			//slide three
 
-			slide1.css('opacity', '0');
-			slide2.css('opacity', '0');
-			slide3.css('opacity', '0');
+			if (btn === 'slide-3') {
+				btn3.addClass('accentcolor2');
+				kgSlide.css('left', '-50%');
+				slide3.css('opacity', '1');
+			} else {
+				btn3.removeClass('accentcolor2');
+				slide3.css('opacity', '0');
+			}
 
-		}
-	});
+			//slide four
 
+			if (btn === 'slide-4') {
+				btn4.addClass('accentcolor2');
+				kgSlide.css('left', '-75%');
+				slide4.css('opacity', '1');
+			} else {
+				btn4.removeClass('accentcolor2');
+				slide4.css('opacity', '0');
+			}
+
+		});
+	}
 
     
     
@@ -219,6 +234,8 @@ function yoursite() {
 		projectsClose();
 
 		mainmenubutton();
+
+		kgcarousel();
 
 }
 

@@ -7,37 +7,58 @@ function yoursite() {
 		kgProjects       = $('.projects'),
 		kgProjSlide      = $('.proj-slide'),
 		kgClose          = $('.close'),
-		kgWaterdrop      = $('.skill-bar'),
-		kgSkill          = $('.skill'),
+		//kgWaterdrop      = $('.skill-bar'),
+		//kgSkill          = $('.skill'),
 		kgSkillBar       = $('.skill-bar'),
 		kgLogo           = $('.logo'),
-		kgHeader         = $('header'),
+		//kgHeader         = $('header'),
 		kgOverlay        = $('.overlay'),
 		kgMenubar        = $('.menubar'),
 		kgMenubarLink    = $('.menubar a'),
 		kgProjectsLink   = $('#projects'),
 		kgPage           = $('.page'),
 		kgSlide          = $('.slide'),
-		kgMenubutton     = $('.menubutton');
+		kgMenubutton     = $('.menubutton'),
+		kgsKillCount     = $('.skill .skill-bar');
 
+
+
+   
 
 	//scroll page logo
 
 	function logoScroll() {
 
 		$(window).scroll(function() {
-			var wScroll  = $(this).scrollTop(),
-			    header   = kgHeader.height()/1.8;
+			var kgscroll  = $(this).scrollTop(),
+				menubar	  = kgMenubar.height();
+			    //header    = kgHeader.height();
 
-			kgLogo.css('transform', 'translate(0,' + wScroll/2 + 'px )');
+			kgLogo.css('transform', 'translate(0,' + kgscroll/2 + 'px )');
 
-			kgOverlay.css('opacity', wScroll /600 );
+			kgOverlay.css('opacity', kgscroll /600 );
 
-			if (wScroll <= header) {
-		        kgSkillBar.addClass('skill-level-0 animated fadeIn');
-		    } else {
-		        kgSkillBar.removeClass('skill-level-0 animated fadeIn');
-		    }
+			if (kgscroll > $('.skill-block').offset().top - ($(window).height() / 1.2)) {
+
+				kgSkillBar.each(function(i) {
+					
+					setTimeout(function(){
+						kgSkillBar.eq(i).removeClass('level-0');
+					}, 150 * (i+1));
+
+				});
+			} else {
+
+				kgSkillBar.addClass('level-0');
+
+			}
+
+			if (menubar > ) {
+				$('.menubar-top').css('background', '#2980b9');
+				console.log('hi');
+			} else {
+				$('.menubar-top').css('background', 'transparent');
+			}
 
 		});
 
@@ -49,14 +70,12 @@ function yoursite() {
 
 	function waterdropCount() {
 
-		kgWaterdrop.each(function() {
+		kgsKillCount.each(function() {
 				
-			var waterSpan 	= $(this).find('span'),
-			 	skillWidth 	= kgSkill.width(),
-			 	barWidth  	= $(this).width(),
-			 	total 		= Math.floor((barWidth / skillWidth) * 100);
+					var waterSpan 	= $(this).find('span');
+					var value       = $(this).attr('class').substr(-10, 2);	
 
-				waterSpan.text(total + '');
+				waterSpan.text(value + '%');
 
 		});
 
@@ -83,7 +102,7 @@ function yoursite() {
 			kgProjects.delay(500)
 				.queue( function(next){ 
 	            	$(this).animate({height: '200px'}, 30);
-	            	$('html,body').animate({scrollTop: kgProjectsLink.offset().top}, 1000);
+	            	$('html,body').animate({scrollTop: kgProjectsLink.offset().top -49}, 1000);
 	            next();
 	        });
 
@@ -123,7 +142,7 @@ function yoursite() {
 		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 		      if (target.length) {
 		        $('html,body').animate({
-		          scrollTop: target.offset().top
+		          scrollTop: target.offset().top - 49
 		        }, 1000);
 		        return false;
 		     	}
@@ -218,6 +237,17 @@ function yoursite() {
 
 		});
 	}
+
+
+
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+
+		$('.menubar').removeClass('menubar-top');
+    
+	} else {
+		//$('section').css('margin-top','120px');
+	}
+
 
     
     

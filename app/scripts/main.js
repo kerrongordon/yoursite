@@ -11,7 +11,7 @@ function yoursite() {
 		//kgSkill          = $('.skill'),
 		kgSkillBar       = $('.skill-bar'),
 		kgLogo           = $('.logo'),
-		//kgHeader         = $('header'),
+		kgHeader         = $('header'),
 		kgOverlay        = $('.overlay'),
 		kgMenubar        = $('.menubar'),
 		kgMenubarLink    = $('.menubar a'),
@@ -31,12 +31,12 @@ function yoursite() {
 
 		$(window).scroll(function() {
 			var kgscroll  = $(this).scrollTop(),
-				menubar	  = kgMenubar.height();
-			    //header    = kgHeader.height();
+				//menubar	  = kgMenubar.height();
+			    header    = kgHeader.height() / 2;
 
-			kgLogo.css('transform', 'translate(0,' + kgscroll/2 + 'px )');
+			kgLogo.css('transform', 'translate(0,' + kgscroll/1.1 + 'px )');
 
-			kgOverlay.css('opacity', kgscroll /600 );
+			kgOverlay.css('opacity', kgscroll /500 );
 
 			if (kgscroll > $('.skill-block').offset().top - ($(window).height() / 1.2)) {
 
@@ -53,11 +53,11 @@ function yoursite() {
 
 			}
 
-			if (menubar > ) {
-				$('.menubar-top').css('background', '#2980b9');
+			if (kgscroll > header) {
+				$('.menubar-top').addClass('menu-scroll');
 				console.log('hi');
 			} else {
-				$('.menubar-top').css('background', 'transparent');
+				$('.menubar-top').removeClass('menu-scroll');
 			}
 
 		});

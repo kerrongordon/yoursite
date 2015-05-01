@@ -2,6 +2,45 @@ $mobile-width: 580px
 $tablet-width: 960px
 $desktop-width: 1200px
 
+@include add-grid(12)
+@include add-gutter(1/3)
+@include add-gutter-style('split')
+
+@include sgs-change('debug', true)
+
+.container 
+	@include background-grid($color: blue)
+	max-width: 1200px
+	margin: 0 auto
+	@include clearfix
+
+
+
+//contact
+
+.form 
+	@include clearfix
+
+	input
+		@include grid-span(12)
+
+.form-name
+	@include grid-span(4, 3)
+
+.form-email
+	@include grid-span(4, 7)
+
+.form-con
+	@include grid-span(8, 3)
+	clear: both
+
+.form-btn
+	@include grid-span(2, 6)
+	clear: both
+
+
+
+
 =mobile
 	@media (max-width: #{$mobile-width}) 
 		@content

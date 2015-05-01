@@ -2,6 +2,7 @@
   "name": "yoursite",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "singularity": "~1.6.2"
   }
 }

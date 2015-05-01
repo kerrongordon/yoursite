@@ -1,10 +1,26 @@
 section#contact
 
+	.contact
 
-	form(action="")
-		input(type="text", name="name")
+		.container
 
-		input(type="email")
-		
-		texrarea
+			h2 CONTACT US
+
+			form(action="//formspree.io/your@email.com", method="POST")
+
+				.form-name
+
+					input(type="text", name="name")
+
+				.form-email
+
+					input(type="email", name="_replyto")
+
+				.form-con
+
+					textarea(placeholder="YOUR TEXT")
+
+				.form-btn
+
+					input(type="submit", value="Send Message").btn
 

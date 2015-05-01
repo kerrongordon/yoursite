@@ -13,7 +13,7 @@ var handleError = require('./../utils/handleError.js');
 // Compile scss using ruby sass
 
 gulp.task('styles', function () {
-  return rubySass('app/styles/main.sass', {
+  return rubySass('app/styles/main.scss', {
       sourcemap: false,
       style: 'expanded',
       lineNumbers: true

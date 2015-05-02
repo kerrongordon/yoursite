@@ -101,7 +101,7 @@ function yoursite() {
 
 			kgProjects.delay(500)
 				.queue( function(next){ 
-	            	$(this).animate({height: '200px'}, 30);
+	            	$(this).animate({height: '100px'}, 30);
 	            	$('html,body').animate({scrollTop: kgProjectsLink.offset().top -49}, 1000);
 	            next();
 	        });

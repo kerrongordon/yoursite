@@ -2,11 +2,15 @@ $mobile-width: 580px
 $tablet-width: 960px
 $desktop-width: 1200px
 
+$mobile-bp: 0
+$tablet-bp: 600px
+$desktop-bp: 1200px
+
 @include add-grid(12)
 @include add-gutter(1/3)
 @include add-gutter-style('split')
 
-@include sgs-change('debug', true)
+@include sgs-change('debug', false) //false or true
 
 .container 
 	@include background-grid($color: blue)
@@ -18,25 +22,102 @@ $desktop-width: 1200px
 
 //contact
 
-.form 
+
+form 
 	@include clearfix
 
-	input
-		@include grid-span(12)
-
 .form-name
-	@include grid-span(4, 3)
+
+	@include breakpoint($mobile-bp)
+		@include grid-span(8, 3)
+	
+	@include breakpoint($desktop-bp)
+		@include grid-span(4, 3)
 
 .form-email
-	@include grid-span(4, 7)
+
+	@include breakpoint($mobile-bp)
+		@include grid-span(8, 3)
+		clear: both
+
+	@include breakpoint($desktop-bp)
+		@include grid-span(4, 7)
 
 .form-con
 	@include grid-span(8, 3)
 	clear: both
 
+.form-text
+	@include grid-span(12, 3)
+
 .form-btn
 	@include grid-span(2, 6)
 	clear: both
+
+.form-i-n
+	@include grid-span(12, 1)
+
+.form-i-e
+	@include grid-span(12, 1)
+
+.form-text
+	@include grid-span(12, 1)
+
+
+///footer
+
+.copyright
+	@include grid-span(4, 1)
+
+.footer-nav
+	@include breakpoint($mobile-bp)
+		@include grid-span(12, 1)
+		clear: both
+
+	@include breakpoint($tablet-bp)
+		@include grid-span(8, 5)
+
+	@include breakpoint($desktop-bp)
+		@include grid-span(5, 8)
+
+
+
+///////////////////////////////////////
+
+.projects
+	@include clearfix
+
+.proj
+	text-align: center
+	@include breakpoint($mobile-bp)
+		@include grid-span(6, 1)
+	
+	@include breakpoint($tablet-bp)
+		@include grid-span(3, 1)
+
+	&:nth-child(2)
+		@include breakpoint($mobile-bp)
+			@include grid-span(6, 7)
+
+		@include breakpoint($tablet-bp)
+			@include grid-span(3, 4)
+
+	&:nth-child(3)
+		@include breakpoint($mobile-bp)
+			@include grid-span(6, 1)
+			clear: both
+		
+		@include breakpoint($tablet-bp)
+			@include grid-span(3, 7)
+
+	&:nth-child(4)
+		@include breakpoint($mobile-bp)
+			@include grid-span(6, 7)
+			clear: right
+
+		@include breakpoint($tablet-bp)
+			@include grid-span(3, 10)
+
 
 
 
@@ -115,28 +196,7 @@ header
 
 //////////////////////////////////////////////
 
-.proj
-	@include tablet
-		width: 150px
 
-		img
-			width: 75px
-
-		h4
-			font-size: 1.1em
-
-		p 
-			font-size: 0.8em
-
-	@include mobile
-		width: 75px
-		padding: 1em
-
-		h4
-			font-size: 1em
-
-		p 
-			display: none
 
 
 .menubar

@@ -4,21 +4,23 @@ section#contact
 
 		.container
 
-			h2 CONTACT US
+			h2.center.title Contact us
+
+			p.center.sub-title We're currently accepting new client projects.
 
 			form(action="//formspree.io/your@email.com", method="POST")
 
 				.form-name
 
-					input(type="text", name="name")
+					input(type="text", name="name", placeholder="james brown", onfocus="this.placeholder = ''" onblur="this.placeholder = 'james brown'").form-i-n
 
 				.form-email
 
-					input(type="email", name="_replyto")
+					input(type="email", name="_replyto", placeholder="your-email@domain.com", onfocus="this.placeholder = ''" onblur="this.placeholder = 'your-email@domain.com'").form-i-e
 
 				.form-con
 
-					textarea(placeholder="YOUR TEXT")
+					textarea(placeholder="your message").form-text
 
 				.form-btn
 

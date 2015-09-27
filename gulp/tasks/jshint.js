@@ -13,6 +13,6 @@ gulp.task('jshint', function () {
   return gulp.src(['app/scripts/**/*.js', '!app/scripts/plugins/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter(stylish));
-    //.pipe(jsHintErrorReporter())
-    //.on('error', handleError);
+    .pipe(jsHintErrorReporter())
+    .on('error', handleError);
 });
